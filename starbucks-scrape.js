@@ -31,7 +31,7 @@ const success = chalk.keyword("green");
         });
 
         await browser.close()
-        fs.writeFile("bookscrape.json", JSON.stringify(result), function(err) {
+        fs.writeFile("starbucks.json", JSON.stringify(result), function(err) {
             if (err) throw err;
             console.log(success("Saved!"));
         })
@@ -44,5 +44,5 @@ const success = chalk.keyword("green");
 }) ();
 
 async function getBlondeRoasts(browser, page) {
-    
+
 }
