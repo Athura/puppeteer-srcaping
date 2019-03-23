@@ -14,11 +14,8 @@ const success = chalk.keyword("green");
       // open a new page
       const page = await browser.newPage();
       // enter url in page
-      await page.goto(`https://athome.starbucks.com/blonde-roast-coffees/`);
-      await page.waitForSelector("div.sub-hero-title");
-
-      let titleNodeList = page.$x("//div[4]/div/p[2]").innerText;
-      console.log(titleNodeList);
+      await page.goto(`https://news.ycombinator.com/`);
+      await page.waitForSelector("a.storylink");
 
       const results = await page.evaluate(() => {
         let titleNodeList = document.querySelectorAll(`a.storylink`);
@@ -38,7 +35,7 @@ const success = chalk.keyword("green");
       // console.log(news);
       await browser.close();
       // Writing the news inside a json file
-      fs.writeFile("starbucks.json", JSON.stringify(results), function(err) {
+      fs.writeFile("hackernews.json", JSON.stringify(results), function(err) {
         if (err) throw err;
         console.log("Saved!");
       });
