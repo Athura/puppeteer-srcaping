@@ -30,7 +30,7 @@ const helperFunctions = () => {
       console.log(success("Browser Created"));
       // enter url in page
       await page.goto(`https://athome.starbucks.com/blonde-roast-coffees/`);
-
+      console.log(success("We have arrived"));
       // https://github.com/GoogleChrome/puppeteer/issues/2917
       // We have to craft our own idle detector
       // await page.waitForSelector("div.sub-hero-title");
